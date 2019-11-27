@@ -95,4 +95,11 @@ def SVM(x_test,y_test,x_train,y_train):
  y_pred=SVR(gamma=0.9,C=1.0,epsilon=0.2).fit(x_train,y_train).predict(x_test)
  for i in range (len(y_test)):
   print(y_test[i],y_pred[i])
-SVM(x_test,y_test,x_train,y_train)
+#SVM(x_test,y_test,x_train,y_train)
+
+def SGD(x_test,y_test,x_train,y_train):
+ from sklearn import linear_model
+ y_pred=linear_model.SGDRegressor().fit(x_train,y_train).predict(x_test)
+ for i in range (len(y_test)):
+  print(y_test[i],y_pred[i])
+#SGD(x_test,y_test,x_train,y_train)
