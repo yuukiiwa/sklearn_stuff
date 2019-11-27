@@ -1,6 +1,7 @@
 import sys
 import numpy as np
 fn=sys.argv[1]
+model=sys.argv[2]
 
 def genEntry(L):
  entry=[]
@@ -54,9 +55,6 @@ def trainTest(target,data,num):
     ytrain.append(i)
  x_train,y_train=np.array(xtrain),np.array(ytrain)
  return (x_test,y_test,x_train,y_train)
-num=0
-sp=trainTest(target,data,num)
-x_test,y_test,x_train,y_train=sp[0],sp[1],sp[2],sp[3]
 
 def MNB(x_test,y_test,x_train,y_train):
  from sklearn.naive_bayes import MultinomialNB
@@ -66,7 +64,7 @@ def MNB(x_test,y_test,x_train,y_train):
   print(y_test[i],y_pred[i])
 #MNB(x_test,y_test,x_train,y_train)
 
-def LogisticRegression(x_test,y_test,x_train,y_train):
+def LogisticR(x_test,y_test,x_train,y_train):
  from sklearn.linear_model import LogisticRegression
  #newton-cg does better than lbfgs on my input
  y_pred=LogisticRegression(random_state=0,solver='newton-cg',
@@ -157,3 +155,12 @@ def MLPerceptronR(x_test,y_test,x_train,y_train):
  for i in range (len(y_test)):
   print(y_test[i],y_pred[i])
 #MLPerceptronR(x_test,y_test,x_train,y_train)
+
+def indvModel(model,target,data):
+ models=[MNB,LogisticR,KNN,BayesRidge,SVM,SGD,ExtremeRanTree,AdaBoost,GradientBoostR,
+            GaussianProcessR,DecisionTreeR,RandomForest,MLPerceptronR]
+ for a in range (5): 
+  i=trainTest(target,data,a)
+  x_test,y_test,x_train,y_train=i[0],i[1],i[2],i[3]
+  models[model](x_test,y_test,x_train,y_train)
+indvModel(model,target,data)
