@@ -104,6 +104,27 @@ def SGD(x_test,y_test,x_train,y_train):
   print(y_test[i],y_pred[i])
 #SGD(x_test,y_test,x_train,y_train)
 
+def ExtremeRanTree(x_test,y_test,x_train,y_train):
+ from sklearn.ensemble import ExtraTreesRegressor
+ y_pred=ExtraTreesRegressor(n_estimators=100).fit(x_train,y_train).predict(x_test)
+ for i in range (len(y_test)):
+  print(y_test[i],y_pred[i])
+#ExtremeRanTree(x_test,y_test,x_train,y_train)
+
+def AdaBoostR(x_test,y_test,x_train,y_train):
+ from sklearn.ensemble import AdaBoostRegressor
+ y_pred=AdaBoostRegressor().fit(x_train,y_train).predict(x_test)
+ for i in range (len(y_test)):
+  print(y_test[i],y_pred[i])
+#AdaBoostR(x_test,y_test,x_train,y_train)
+
+def GradientBoostR(x_test,y_test,x_train,y_train):
+ from sklearn.ensemble import GradientBoostingRegressor
+ y_pred=GradientBoostingRegressor().fit(x_train,y_train).predict(x_test)
+ for i in range (len(y_test)):
+  print(y_test[i],y_pred[i])
+#GradientBoostR(x_test,y_test,x_train,y_train)
+
 ####################################################################################################
 #use python3 to run these, where sklearn version == 0.21.3
 def GaussianProcessR(x_test,y_test,x_train,y_train):
@@ -121,4 +142,18 @@ def DecisionTreeR(x_test,y_test,x_train,y_train):
  y_pred=DecisionTreeRegressor(random_state=0).fit(x_train,y_train).predict(x_test)
  for i in range (len(y_test)):
   print(y_test[i],y_pred[i])
-DecisionTreeR(x_test,y_test,x_train,y_train)
+#DecisionTreeR(x_test,y_test,x_train,y_train)
+
+def RandomForest(x_test,y_test,x_train,y_train):
+ from sklearn.ensemble import RandomForestRegressor
+ y_pred=RandomForestRegressor(max_depth=2, random_state=0,n_estimators=100).fit(x_train,y_train).predict(x_test)
+ for i in range (len(y_test)):
+  print(y_test[i],y_pred[i])
+#RandomForest(x_test,y_test,x_train,y_train)
+
+def MLPerceptronR(x_test,y_test,x_train,y_train):
+ from sklearn.neural_network import MLPRegressor
+ y_pred=MLPRegressor().fit(x_train,y_train).predict(x_test)
+ for i in range (len(y_test)):
+  print(y_test[i],y_pred[i])
+#MLPerceptronR(x_test,y_test,x_train,y_train)
