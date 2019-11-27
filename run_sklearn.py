@@ -1,7 +1,8 @@
 import sys
 import numpy as np
 fn=sys.argv[1]
-model=sys.argv[2]
+type=sys.argv[2]
+model=sys.argv[3]
 
 def genEntry(L):
  entry=[]
@@ -9,18 +10,20 @@ def genEntry(L):
   entry.append(int(i))
  return entry
 
-def openFile(fn):
+def openFile(fn,type):
  file=open(fn,"r")
  file.readline()
  dict={'data':[],'target':[]}
  for ln in file:
   ln=ln.strip("\r\n").split(",")
-#  dict['target'].append(int(round(float(ln[0]),1)*10))  #classifier input
-  dict['target'].append(float(ln[0]))  #regressor input
+  if type == 'classifier':
+   dict['target'].append(int(round(float(ln[0]),1)*10))  #classifier input
+  else:
+   dict['target'].append(float(ln[0]))  #regressor input
   entry=genEntry(ln[1:])
   dict['data'].append(entry)
  return dict
-dict=openFile(fn)
+dict=openFile(fn,type)
 print(len(dict['data']))
 
 def counter(num):
