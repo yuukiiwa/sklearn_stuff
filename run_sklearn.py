@@ -103,3 +103,14 @@ def SGD(x_test,y_test,x_train,y_train):
  for i in range (len(y_test)):
   print(y_test[i],y_pred[i])
 #SGD(x_test,y_test,x_train,y_train)
+
+#use python3 to run this, where sklearn version == 0.21.3
+def GaussianProcessR(x_test,y_test,x_train,y_train):
+ from sklearn.gaussian_process import GaussianProcessRegressor
+ from sklearn.gaussian_process.kernels import DotProduct, WhiteKernel
+ kernel=DotProduct()+WhiteKernel()
+ y_pred=GaussianProcessRegressor(kernel=kernel,random_state=0).fit(x_train,y_train).predict(x_test)
+ for i in range (len(y_test)):
+  print(y_test[i],y_pred[i])
+#GaussianProcessR(x_test,y_test,x_train,y_train)
+
