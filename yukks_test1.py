@@ -73,3 +73,10 @@ def LogisticRegression(x_test,y_test,x_train,y_train):
  for i in range(len(y_test)):
   print(y_test[i],y_pred[i])
 LogisticRegression(x_test,y_test,x_train,y_train)
+
+def KNN(x_test,y_test,x_train,y_train):
+ from sklearn.neighbors import KNeighborsRegressor
+ y_pred=KNeighborsRegressor(n_neighbors=10).fit(x_train,y_train).predict(x_test)
+ for i in range(len(y_test)):
+  print(y_test[i],y_pred[i])
+KNN(x_test,y_test,x_train,y_train)
