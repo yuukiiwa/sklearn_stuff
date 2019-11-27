@@ -80,3 +80,11 @@ def KNN(x_test,y_test,x_train,y_train):
  for i in range(len(y_test)):
   print(y_test[i],y_pred[i])
 KNN(x_test,y_test,x_train,y_train)
+
+def BayesRidge(x_test,y_test,x_train,y_train):
+ from sklearn import linear_model
+ BR=linear_model.BayesianRidge()
+ y_pred=BR.fit(x_train,y_train).predict(x_test)
+ for i in range (len(y_test)):
+  print(y_test[i],y_pred[i])
+BayesRidge(x_test,y_test,x_train,y_train)
