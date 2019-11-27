@@ -157,8 +157,10 @@ def MLPerceptronR(x_test,y_test,x_train,y_train):
 #MLPerceptronR(x_test,y_test,x_train,y_train)
 
 def indvModel(model,target,data):
- models=[MNB,LogisticR,KNN,BayesRidge,SVM,SGD,ExtremeRanTree,AdaBoost,GradientBoostR,
-            GaussianProcessR,DecisionTreeR,RandomForest,MLPerceptronR]
+ models={'MNB':MNB,'LogisticR':LogisticR,'KNN':KNN,'BayesRidge':BayesRidge,'SVM':SVM,'SGD':SGD,
+         'ExtremeRanTree':ExtremeRanTree,'AdaBoostR':AdaBoostR,'GradientBoostR':GradientBoostR,
+         'GaussianProcessR':GaussianProcessR,'DecisionTreeR':DecisionTreeR,'RandomForest':RandomForest,
+         'MLPerceptronR':MLPerceptronR}
  for a in range (5): 
   i=trainTest(target,data,a)
   x_test,y_test,x_train,y_train=i[0],i[1],i[2],i[3]
