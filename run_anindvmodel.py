@@ -110,8 +110,7 @@ def GradientBoostR(x_test,y_test,x_train,y_train):
  y_pred=GradientBoostingRegressor().fit(x_train,y_train).predict(x_test)
  return y_pred
 
-####################################################################################################
-#use python3 to run these, where sklearn version == 0.21.3
+###########################use python3 to run these, where sklearn version == 0.21.3###########################
 def GaussianProcessR(x_test,y_test,x_train,y_train):
  from sklearn.gaussian_process import GaussianProcessRegressor
  from sklearn.gaussian_process.kernels import DotProduct, WhiteKernel
