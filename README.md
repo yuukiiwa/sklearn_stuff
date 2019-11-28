@@ -1,4 +1,5 @@
 # run_anindvmodel.py
+Models included:
 ```
 ##Supported by Python2.7 and 0.17.0 version of sklearn
 MNB
