@@ -1,5 +1,5 @@
 # run_anindvmodel.py
-Models included:
+The models included are mostly regressors, and here are the models:
 ```
 ##Supported by Python2.7 and 0.17.0 version of sklearn
 MNB
@@ -18,11 +18,11 @@ DecisionTreeR
 RandomForest
 MLPerceptronR
 ```
-to run the program with Python2.7
+To run the program with Python2.7
 ```
 python run_anindvmodel.py [input file] [model]
 ```
-to run the program with Python3
+To run the program with Python3
 ```
 python3 run_anindvmodel.py [input file] [model]
 ```
