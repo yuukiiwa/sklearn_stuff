@@ -63,7 +63,7 @@ def outFile(y_test,y_pred,model,outfile):
   outfile.write(str(y_test[i])+","+str(y_pred[i])+"\r\n")
   s+=(y_test[i]-y_pred[i])**2
  MSE=s/len(y_test)
- print MSE
+ print(MSE)
  
 def MNB(x_test,y_test,x_train,y_train):
  from sklearn.naive_bayes import MultinomialNB
