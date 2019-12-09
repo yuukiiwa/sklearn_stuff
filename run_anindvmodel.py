@@ -49,7 +49,7 @@ def trainTest(target,data,num):
  x_test,y_test=np.array(data[num]),np.array(target[num])
  xtrain,ytrain=[],[]
  for a in range (5):
-  if a+1 != num:
+  if a != num:
    for j in data[num]:
     xtrain.append(j)
    for i in target[num]:
